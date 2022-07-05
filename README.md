@@ -1,6 +1,6 @@
 # Clone of JSON Simple
 
-*Slovenský text nájdete nižšie (for Slovak scroll down).*
+*Slovenský text je nižšie (for Slovak scroll/look down).*
 
 I needed the simplest possible parser and/or generator of JSON files for one project. Instead of creating my own (as I usually did, which in retrospect, I don’t find very effective), I started searching. I found [this quick manual](https://www.tutorialspoint.com/json/json_java_example.htm) referencing this toolkit. After the first compilation, I was surprised by the number of “raw-type” warnings. So, I started adding &lt;Types&gt; to individual classes… and I am posting the result here.
 

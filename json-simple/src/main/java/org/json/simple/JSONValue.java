@@ -22,28 +22,28 @@ import org.json.simple.parser.ParseException;
  */
 public class JSONValue
 {
-	/**
+	/* *
 	 * Parse JSON text into java object from the input source.
-	 * Please use parseWithException() if you don't want to ignore the
+	 * Please use parseWithException() if you don’t want to ignore the
 	 * exception.
 	 * 
 	 * @see org.json.simple.parser.JSONParser#parse(Reader)
 	 * @see #parseWithException(Reader)
 	 * 
 	 * @param in
-	 * @return Instance of the following:
-	 * 	org.json.simple.JSONObject,
-	 * 	org.json.simple.JSONArray,
-	 * 	java.lang.String,
-	 * 	java.lang.Number,
-	 * 	java.lang.Boolean,
-	 * 	null
+	 * @return Instance of the following:<br>
+	 * 		org.json.simple.JSONObject,<br>
+	 * 		org.json.simple.JSONArray,<br>
+	 * 		java.lang.String,<br>
+	 * 		java.lang.Number,<br>
+	 * 		java.lang.Boolean,<br>
+	 * 		null
 	 * 
-	 * @deprecated this method may throw an {@code Error} instead of returning
+	 * @ deprecated this method may throw an {@code Error} instead of returning
 	 * {@code null}; please use {@link JSONValue#parseWithException(Reader)}
 	 * instead
 	 */
-	@Deprecated
+	/*@ deprecated
 	public static Object parse(Reader in)
 	{
 		try {
@@ -52,35 +52,35 @@ public class JSONValue
 		} catch (Exception e) {
 			return null;
 		}
-	}
+	}*/ //** (Don’t even think about using the deprecated stuff.)
 
-	/**
+	/* *
 	 * Parse JSON text into java object from the given string.
-	 * Please use parseWithException() if you don't want to ignore the
+	 * Please use parseWithException() if you don’t want to ignore the
 	 * exception.
 	 * 
 	 * @see org.json.simple.parser.JSONParser#parse(Reader)
 	 * @see #parseWithException(Reader)
 	 * 
 	 * @param s
-	 * @return Instance of the following:
-	 * 	org.json.simple.JSONObject,
-	 * 	org.json.simple.JSONArray,
-	 * 	java.lang.String,
-	 * 	java.lang.Number,
-	 * 	java.lang.Boolean,
-	 * 	null
+	 * @return Instance of the following:<br>
+	 * 		org.json.simple.JSONObject,<br>
+	 * 		org.json.simple.JSONArray,<br>
+	 * 		java.lang.String,<br>
+	 * 		java.lang.Number,<br>
+	 * 		java.lang.Boolean,<br>
+	 * 		null
 	 * 
-	 * @deprecated this method may throw an {@code Error} instead of returning
+	 * @ deprecated this method may throw an {@code Error} instead of returning
 	 * {@code null}; please use {@link JSONValue#parseWithException(String)}
 	 * instead
 	 */
-	@Deprecated
+	/*@ deprecated
 	public static Object parse(String s)
 	{
 		StringReader in = new StringReader(s);
 		return parse(in);
-	}
+	}*/ //** (Don’t even think about using the deprecated stuff.)
 
 	/**
 	 * Parse JSON text into java object from the input source.
@@ -88,13 +88,13 @@ public class JSONValue
 	 * @see org.json.simple.parser.JSONParser
 	 * 
 	 * @param in
-	 * @return Instance of the following:
-	 * 	org.json.simple.JSONObject,
-	 * 	org.json.simple.JSONArray,
-	 * 	java.lang.String,
-	 * 	java.lang.Number,
-	 * 	java.lang.Boolean,
-	 * 	null
+	 * @return Instance of the following:<br>
+	 * 		org.json.simple.JSONObject,<br>
+	 * 		org.json.simple.JSONArray,<br>
+	 * 		java.lang.String,<br>
+	 * 		java.lang.Number,<br>
+	 * 		java.lang.Boolean,<br>
+	 * 		null
 	 * 
 	 * @throws IOException
 	 * @throws ParseException
@@ -106,6 +106,21 @@ public class JSONValue
 		return parser.parse(in);
 	}
 
+	/**
+	 * Parse JSON text into java object from the given string.
+	 * 
+	 * @see org.json.simple.parser.JSONParser
+	 * 
+	 * @param s
+	 * @return Instance of the following:<br>
+	 * 		org.json.simple.JSONObject,<br>
+	 * 		org.json.simple.JSONArray,<br>
+	 * 		java.lang.String,<br>
+	 * 		java.lang.Number,<br>
+	 * 		java.lang.Boolean,<br>
+	 * 		null
+	 * 
+	 */
 	public static Object parseWithException(String s) throws ParseException
 	{
 		JSONParser parser = new JSONParser();
@@ -115,7 +130,7 @@ public class JSONValue
 	/**
 	 * Encode an object into JSON text and write it to out.
 	 * <p>
-	 * If this object is a Map or a List, and it's also a JSONStreamAware or
+	 * If this object is a Map or a List, and it’s also a JSONStreamAware or
 	 * a JSONAware, JSONStreamAware or JSONAware will be considered firstly.
 	 * <p>
 	 * DO NOT call this method from writeJSONString(Writer) of a class that
@@ -261,7 +276,7 @@ public class JSONValue
 	/**
 	 * Convert an object to JSON text.
 	 * <p>
-	 * If this object is a Map or a List, and it's also a JSONAware,
+	 * If this object is a Map or a List, and it’s also a JSONAware,
 	 * JSONAware will be considered firstly.
 	 * <p>
 	 * DO NOT call this method from toJSONString() of a class that implements
@@ -272,7 +287,7 @@ public class JSONValue
 	 * @see org.json.simple.JSONArray#toJSONString(List)
 	 * 
 	 * @param value
-	 * @return JSON text, or "null" if value is null or it's an NaN or an
+	 * @return JSON text, or "null" if value is null or it’s an NaN or an
 	 * INF number.
 	 */
 	public static String toJSONString(Object value)
@@ -303,8 +318,8 @@ public class JSONValue
 	}
 
 	/**
-	 * @param s - Must not be null.
-	 * @param sb - Must not be null.
+	 * @param s Must not be null.
+	 * @param sb Must not be null.
 	 */
 	static void escape(String s, StringBuffer sb)
 	{

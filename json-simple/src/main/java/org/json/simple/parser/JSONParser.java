@@ -58,7 +58,7 @@ public class JSONParser
 	/**
 	 * Reset the parser to the initial state with a new character reader.
 	 * 
-	 * @param in - The new character reader.
+	 * @param in The new character reader.
 	 * @throws IOException
 	 * @throws ParseException
 	 */
@@ -103,15 +103,15 @@ public class JSONParser
 	 * Parse JSON text into java object from the input source.
 	 * 
 	 * @param in
-	 * @param containerFactory - Use this factory to createyour own JSON
+	 * @param containerFactory Use this factory to createyour own JSON
 	 * object and JSON array containers.
-	 * @return Instance of the following:
-	 * 	org.json.simple.JSONObject,
-	 * 	org.json.simple.JSONArray,
-	 * 	java.lang.String,
-	 * 	java.lang.Number,
-	 * 	java.lang.Boolean,
-	 * 	null
+	 * @return Instance of the following:<br>
+	 * 		org.json.simple.JSONObject,<br>
+	 * 		org.json.simple.JSONArray,<br>
+	 * 		java.lang.String,<br>
+	 * 		java.lang.Number,<br>
+	 * 		java.lang.Boolean,<br>
+	 * 		null
 	 * 
 	 * @throws IOException
 	 * @throws ParseException
@@ -383,11 +383,11 @@ public class JSONParser
 	 * 
 	 * @param in
 	 * @param contentHandler
-	 * @param isResume - Indicates if it continues previous parsing operation.
-	 * 					  If set to true, resume parsing the old stream, and
-	 * 					  parameter 'in' will be ignored.
-	 * 					  If this method is called for the first time in this
-	 * 					  instance, isResume will be ignored.
+	 * @param isResume Indicates if it continues previous parsing operation.
+	 * 		If set to true, resume parsing the old stream, and parameter ‘in’
+	 * 		will be ignored.
+	 * 		If this method is called for the first time in this instance,
+	 * 		isResume will be ignored.
 	 * 
 	 * @throws IOException
 	 * @throws ParseException
@@ -532,7 +532,7 @@ public class JSONParser
 				case S_IN_PAIR_VALUE:
 					/*
 					 * S_IN_PAIR_VALUE is just a marker to indicate the end of
-					 * an object entry, it doesn't proccess any token,
+					 * an object entry, it doesn’t proccess any token,
 					 * therefore delay consuming token until next round.
 					 */
 					statusStack.removeFirst();

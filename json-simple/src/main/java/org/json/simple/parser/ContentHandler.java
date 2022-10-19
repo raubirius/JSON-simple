@@ -55,7 +55,7 @@ public interface ContentHandler
 	/**
 	 * Receive notification of the beginning of a JSON object entry.
 	 * 
-	 * @param key - Key of a JSON object entry.
+	 * @param key Key of a JSON object entry.
 	 * 
 	 * @return false if the handler wants to stop parsing after return.
 	 * @throws ParseException
@@ -95,17 +95,17 @@ public interface ContentHandler
 	boolean endArray() throws ParseException, IOException;
 
 	/**
-	 * Receive notification of the JSON primitive values:
-	 * 	java.lang.String,
-	 * 	java.lang.Number,
-	 * 	java.lang.Boolean
-	 * 	null
+	 * Receive notification of the JSON primitive values:<br>
+	 * 		java.lang.String,<br>
+	 * 		java.lang.Number,<br>
+	 * 		java.lang.Boolean<br>
+	 * 		null
 	 * 
-	 * @param value - Instance of the following:
-	 * 			java.lang.String,
-	 * 			java.lang.Number,
-	 * 			java.lang.Boolean
-	 * 			null
+	 * @param value Instance of the following:<br>
+	 * 		java.lang.String,<br>
+	 * 		java.lang.Number,<br>
+	 * 		java.lang.Boolean<br>
+	 * 		null
 	 * 
 	 * @return false if the handler wants to stop parsing after return.
 	 * @throws ParseException

@@ -63,10 +63,10 @@ public class ParseException extends Exception
 	/**
 	 * @see org.json.simple.parser.Yytoken
 	 * 
-	 * @return One of the following base on the value of errorType:
-	 * 			ERROR_UNEXPECTED_CHAR		java.lang.Character
-	 * 			ERROR_UNEXPECTED_TOKEN		org.json.simple.parser.Yytoken
-	 * 			ERROR_UNEXPECTED_EXCEPTION	java.lang.Exception
+	 * @return One of the following base on the value of errorType:<br>
+	 * 		ERROR_UNEXPECTED_CHAR		java.lang.Character<br>
+	 * 		ERROR_UNEXPECTED_TOKEN		org.json.simple.parser.Yytoken<br>
+	 * 		ERROR_UNEXPECTED_EXCEPTION	java.lang.Exception
 	 */
 	public Object getUnexpectedObject()
 	{
